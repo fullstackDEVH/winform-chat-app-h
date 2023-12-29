@@ -1,0 +1,11 @@
+C:\Study\Code-in-window\MiniChat\MiniChat\bin\Debug\MiniChat.exe.config
+C:\Study\Code-in-window\MiniChat\MiniChat\bin\Debug\MiniChat.exe
+C:\Study\Code-in-window\MiniChat\MiniChat\bin\Debug\MiniChat.pdb
+C:\Study\Code-in-window\MiniChat\MiniChat\obj\Debug\ChatClient.csproj.AssemblyReference.cache
+C:\Study\Code-in-window\MiniChat\MiniChat\obj\Debug\ChatClient.csproj.SuggestedBindingRedirects.cache
+C:\Study\Code-in-window\MiniChat\MiniChat\obj\Debug\MiniChat.Properties.Resources.resources
+C:\Study\Code-in-window\MiniChat\MiniChat\obj\Debug\ChatClient.csproj.GenerateResource.cache
+C:\Study\Code-in-window\MiniChat\MiniChat\obj\Debug\ChatClient.csproj.CoreCompileInputs.cache
+C:\Study\Code-in-window\MiniChat\MiniChat\obj\Debug\MiniChat.exe
+C:\Study\Code-in-window\MiniChat\MiniChat\obj\Debug\MiniChat.pdb
+C:\Study\Code-in-window\MiniChat\MiniChat\obj\Debug\MiniChat.frmClient.resources

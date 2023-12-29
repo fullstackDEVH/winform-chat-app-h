@@ -1,0 +1,10 @@
+E:\19ct1\DangNgocHau_MiniChat\ChatServer\bin\Release\ChatServer.exe.config
+E:\19ct1\DangNgocHau_MiniChat\ChatServer\bin\Release\ChatServer.exe
+E:\19ct1\DangNgocHau_MiniChat\ChatServer\bin\Release\ChatServer.pdb
+E:\19ct1\DangNgocHau_MiniChat\ChatServer\obj\Release\ChatServer.csproj.AssemblyReference.cache
+E:\19ct1\DangNgocHau_MiniChat\ChatServer\obj\Release\ChatServer.frmServer.resources
+E:\19ct1\DangNgocHau_MiniChat\ChatServer\obj\Release\ChatServer.Properties.Resources.resources
+E:\19ct1\DangNgocHau_MiniChat\ChatServer\obj\Release\ChatServer.csproj.GenerateResource.cache
+E:\19ct1\DangNgocHau_MiniChat\ChatServer\obj\Release\ChatServer.csproj.CoreCompileInputs.cache
+E:\19ct1\DangNgocHau_MiniChat\ChatServer\obj\Release\ChatServer.exe
+E:\19ct1\DangNgocHau_MiniChat\ChatServer\obj\Release\ChatServer.pdb

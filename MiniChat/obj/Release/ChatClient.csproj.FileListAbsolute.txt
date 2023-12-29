@@ -1,0 +1,10 @@
+E:\19ct1\HuaGiaHuy_MiniChat\MiniChat\bin\Release\MiniChat.exe.config
+E:\19ct1\HuaGiaHuy_MiniChat\MiniChat\bin\Release\MiniChat.exe
+E:\19ct1\HuaGiaHuy_MiniChat\MiniChat\bin\Release\MiniChat.pdb
+E:\19ct1\HuaGiaHuy_MiniChat\MiniChat\obj\Release\ChatClient.csproj.AssemblyReference.cache
+E:\19ct1\HuaGiaHuy_MiniChat\MiniChat\obj\Release\MiniChat.frmClient.resources
+E:\19ct1\HuaGiaHuy_MiniChat\MiniChat\obj\Release\MiniChat.Properties.Resources.resources
+E:\19ct1\HuaGiaHuy_MiniChat\MiniChat\obj\Release\ChatClient.csproj.GenerateResource.cache
+E:\19ct1\HuaGiaHuy_MiniChat\MiniChat\obj\Release\ChatClient.csproj.CoreCompileInputs.cache
+E:\19ct1\HuaGiaHuy_MiniChat\MiniChat\obj\Release\MiniChat.exe
+E:\19ct1\HuaGiaHuy_MiniChat\MiniChat\obj\Release\MiniChat.pdb

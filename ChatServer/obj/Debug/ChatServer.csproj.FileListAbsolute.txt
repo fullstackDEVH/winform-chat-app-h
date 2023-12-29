@@ -1,0 +1,11 @@
+C:\Study\Code-in-window\MiniChat\ChatServer\bin\Debug\ChatServer.exe.config
+C:\Study\Code-in-window\MiniChat\ChatServer\bin\Debug\ChatServer.exe
+C:\Study\Code-in-window\MiniChat\ChatServer\bin\Debug\ChatServer.pdb
+C:\Study\Code-in-window\MiniChat\ChatServer\obj\Debug\ChatServer.csproj.AssemblyReference.cache
+C:\Study\Code-in-window\MiniChat\ChatServer\obj\Debug\ChatServer.csproj.SuggestedBindingRedirects.cache
+C:\Study\Code-in-window\MiniChat\ChatServer\obj\Debug\ChatServer.Properties.Resources.resources
+C:\Study\Code-in-window\MiniChat\ChatServer\obj\Debug\ChatServer.csproj.GenerateResource.cache
+C:\Study\Code-in-window\MiniChat\ChatServer\obj\Debug\ChatServer.csproj.CoreCompileInputs.cache
+C:\Study\Code-in-window\MiniChat\ChatServer\obj\Debug\ChatServer.exe
+C:\Study\Code-in-window\MiniChat\ChatServer\obj\Debug\ChatServer.pdb
+C:\Study\Code-in-window\MiniChat\ChatServer\obj\Debug\ChatServer.frmServer.resources
