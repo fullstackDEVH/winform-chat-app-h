@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ChatServer"
+    "\\ChatServer",
+    "\\MiniChat"
   ],
-  "SelectedNode": "\\ChatServer",
+  "SelectedNode": "\\MiniChat\\ChatClient.csproj",
   "PreviewInSolutionExplorer": false
 }

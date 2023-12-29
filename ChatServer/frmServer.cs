@@ -23,6 +23,7 @@ namespace ChatServer
         bool isSendIcon = false;
         int port = 9999;
         int id = -1;
+
         public frmServer()
         {
             InitializeComponent();
@@ -30,10 +31,9 @@ namespace ChatServer
             initialSocket();
             addEmoji();
             listIcons.Visible = false;
-
-
         }
 
+        // Khỏi tạo
         private void initialSocket()
         {
             clientList = new List<Socket>();
@@ -80,6 +80,8 @@ namespace ChatServer
 
 
         }
+
+        // Khởi tạo emoji khi chạy lần đầu
         private void addEmoji()
         {
             string path = getPathName() + @"\Emoij";
@@ -101,6 +103,8 @@ namespace ChatServer
             }
 
         }
+
+        // Lấy đường dẫn thư mục
         public string getPathName()
         {
             string duongDan = Environment.CurrentDirectory.ToString();
@@ -109,6 +113,8 @@ namespace ChatServer
             return url.ToString();
 
         }
+
+        // Gửi tin khi kết nối thành công và đã soạn tin
         private void Send(Socket client, string message)
         {
             
@@ -117,6 +123,8 @@ namespace ChatServer
                 client.Send(Serialize(message));
             }
         }
+
+        // Encode
         private byte[] Serialize(object obj)
         {
             MemoryStream stream = new MemoryStream();
@@ -124,6 +132,8 @@ namespace ChatServer
             formatter.Serialize(stream, obj);
             return stream.ToArray();
         }
+
+        // Decode
         private object Deserialize(byte[] data)
         {
             MemoryStream stream = new MemoryStream(data);
@@ -139,6 +149,7 @@ namespace ChatServer
             }
           
         }
+
          private void SendImage(Socket client)
         {
             if (client != null)
@@ -151,6 +162,7 @@ namespace ChatServer
                 client.Send(byteArray);
             }
         }
+
         private bool check(byte[] data)
         {
             try
@@ -174,6 +186,8 @@ namespace ChatServer
         {
             server.Close(); 
         }
+
+        // Nhận tin nhắn socket khi có người gửi
         private void Receive( object obj)
         {
             Socket client = obj as Socket;
@@ -198,11 +212,13 @@ namespace ChatServer
                             item.Send(Serialize(message));
                         }
                         lvMessage.SelectionAlignment = HorizontalAlignment.Left;
-                        lvMessage.AppendText("Client" + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
-                        lvMessage.ReadOnly = false;
-                        lvMessage.Select(lvMessage.Text.ToString().Length, 0);
                         lvMessage.AppendText(message);
                         lvMessage.AppendText("\n");
+                        lvMessage.AppendText("Client" + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
+                        lvMessage.AppendText("\n");
+
+                        lvMessage.ReadOnly = false;
+                        lvMessage.Select(lvMessage.Text.ToString().Length, 0);
                         lvMessage.ReadOnly = true;
                     }
                     else
@@ -213,11 +229,12 @@ namespace ChatServer
                         pictureBox3.Visible = false;
                         Clipboard.SetImage(pictureBox3.Image);
                         lvMessage.SelectionAlignment = HorizontalAlignment.Left;
-                        lvMessage.AppendText("Client" + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
                         lvMessage.ReadOnly = false;
                         lvMessage.Select(lvMessage.Text.ToString().Length, 0);
                         lvMessage.Paste();
                         lvMessage.AppendText("\n");
+                        lvMessage.AppendText("Client" + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
+
                         lvMessage.ReadOnly = true;
                     }
 
@@ -230,6 +247,7 @@ namespace ChatServer
             }
         }
 
+        // Check danh sách client
         private int GetItemIndex(string item)
         {
             int index = 0;
@@ -250,6 +268,8 @@ namespace ChatServer
         {
             Close();
         }
+
+        // Covert Image to Byte
         public byte[] ImageToByteArray(Image imageIn)
         {
             using (var ms = new MemoryStream())
@@ -281,11 +301,12 @@ namespace ChatServer
                 }
 
                 lvMessage.SelectionAlignment = HorizontalAlignment.Right;
-                lvMessage.AppendText("Me" + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
                 lvMessage.ReadOnly = false;
                 lvMessage.Select(lvMessage.Text.ToString().Length, 0);
                 lvMessage.Paste();
                 lvMessage.AppendText("\n");
+                lvMessage.AppendText("Tôi: " + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
+
                 lvMessage.ReadOnly = true;
                 isSendImage= false;
                 pictureBox2.Image = null;
@@ -302,29 +323,33 @@ namespace ChatServer
                 }
 
                 lvMessage.SelectionAlignment = HorizontalAlignment.Right;
-                lvMessage.AppendText("Me" + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
                 lvMessage.ReadOnly = false;
                 lvMessage.Select(lvMessage.Text.ToString().Length, 0);
                 lvMessage.Paste();
                 listIcons.Visible = false;
                 lvMessage.ReadOnly = true;
                 lvMessage.AppendText("\n");
+                lvMessage.AppendText("Tôi: " + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
+
                 txtMessage.Text = "";
                 isSendIcon = false;
             }
             else
-            {
-                for (int i = 0; i < checkedListBox1.CheckedIndices.Count; i++)
+            { 
+                if(txtMessage.Text != String.Empty)
                 {
-                    SendMessage(clientList[checkedListBox1.CheckedIndices[i]]);
-                }
+                    for (int i = 0; i < checkedListBox1.CheckedIndices.Count; i++)
+                    {
+                        SendMessage(clientList[checkedListBox1.CheckedIndices[i]]);
+                    }
 
-                lvMessage.AppendText("\n");
-                lvMessage.SelectionAlignment = HorizontalAlignment.Right;
-                lvMessage.AppendText("Me" + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
-                lvMessage.AppendText(txtMessage.Text);
-                lvMessage.AppendText("\n");
-                txtMessage.Clear();
+                    lvMessage.SelectionAlignment = HorizontalAlignment.Right;
+                    lvMessage.AppendText("\n");
+                    lvMessage.AppendText(txtMessage.Text);
+                    lvMessage.AppendText("\n");
+                    lvMessage.AppendText("Tôi: " + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
+                    txtMessage.Clear();
+                }
             }
         
         }
@@ -364,12 +389,12 @@ namespace ChatServer
                 lvMessage.SelectionAlignment = HorizontalAlignment.Right;
                 lvMessage.AppendText("Me" + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
                 lvMessage.AppendText(txtMessage.Text);
-                lvMessage.AppendText("\n");
                 txtMessage.Clear();
 
             }
         }
 
+        // Open popup choose image
         private void btnOpenImg_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
@@ -385,6 +410,7 @@ namespace ChatServer
             }
         }
 
+        // remove message
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int firstcharindex = lvMessage.GetFirstCharIndexOfCurrentLine();
@@ -425,6 +451,19 @@ namespace ChatServer
         private void lvMessage_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xoá tất cả tin nhắn?",
+                                                 "Xác nhận xoá",
+                                                 MessageBoxButtons.YesNo,
+                                                 MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                lvMessage.Clear();
+            }
         }
 
         private void btnSendFile_Click(object sender, EventArgs e)

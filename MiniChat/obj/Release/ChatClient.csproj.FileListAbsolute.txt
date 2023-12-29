@@ -8,3 +8,23 @@ E:\19ct1\HuaGiaHuy_MiniChat\MiniChat\obj\Release\ChatClient.csproj.GenerateResou
 E:\19ct1\HuaGiaHuy_MiniChat\MiniChat\obj\Release\ChatClient.csproj.CoreCompileInputs.cache
 E:\19ct1\HuaGiaHuy_MiniChat\MiniChat\obj\Release\MiniChat.exe
 E:\19ct1\HuaGiaHuy_MiniChat\MiniChat\obj\Release\MiniChat.pdb
+D:\19ct1\c#\New folder\winform-chat-app-h\MiniChat\bin\Release\MiniChat.exe.config
+D:\19ct1\c#\New folder\winform-chat-app-h\MiniChat\bin\Release\MiniChat.exe
+D:\19ct1\c#\New folder\winform-chat-app-h\MiniChat\bin\Release\MiniChat.pdb
+D:\19ct1\c#\New folder\winform-chat-app-h\MiniChat\obj\Release\ChatClient.csproj.AssemblyReference.cache
+D:\19ct1\c#\New folder\winform-chat-app-h\MiniChat\obj\Release\MiniChat.frmClient.resources
+D:\19ct1\c#\New folder\winform-chat-app-h\MiniChat\obj\Release\MiniChat.Properties.Resources.resources
+D:\19ct1\c#\New folder\winform-chat-app-h\MiniChat\obj\Release\ChatClient.csproj.GenerateResource.cache
+D:\19ct1\c#\New folder\winform-chat-app-h\MiniChat\obj\Release\ChatClient.csproj.CoreCompileInputs.cache
+D:\19ct1\c#\New folder\winform-chat-app-h\MiniChat\obj\Release\MiniChat.exe
+D:\19ct1\c#\New folder\winform-chat-app-h\MiniChat\obj\Release\MiniChat.pdb
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\MiniChat\bin\Release\MiniChat.exe.config
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\MiniChat\bin\Release\MiniChat.exe
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\MiniChat\bin\Release\MiniChat.pdb
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\MiniChat\obj\Release\ChatClient.csproj.AssemblyReference.cache
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\MiniChat\obj\Release\MiniChat.frmClient.resources
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\MiniChat\obj\Release\MiniChat.Properties.Resources.resources
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\MiniChat\obj\Release\ChatClient.csproj.GenerateResource.cache
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\MiniChat\obj\Release\ChatClient.csproj.CoreCompileInputs.cache
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\MiniChat\obj\Release\MiniChat.exe
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\MiniChat\obj\Release\MiniChat.pdb

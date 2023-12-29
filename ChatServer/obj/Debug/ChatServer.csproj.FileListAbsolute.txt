@@ -9,3 +9,23 @@ C:\Study\Code-in-window\MiniChat\ChatServer\obj\Debug\ChatServer.csproj.CoreComp
 C:\Study\Code-in-window\MiniChat\ChatServer\obj\Debug\ChatServer.exe
 C:\Study\Code-in-window\MiniChat\ChatServer\obj\Debug\ChatServer.pdb
 C:\Study\Code-in-window\MiniChat\ChatServer\obj\Debug\ChatServer.frmServer.resources
+D:\19ct1\c#\New folder\winform-chat-app-h\ChatServer\bin\Debug\ChatServer.exe.config
+D:\19ct1\c#\New folder\winform-chat-app-h\ChatServer\bin\Debug\ChatServer.exe
+D:\19ct1\c#\New folder\winform-chat-app-h\ChatServer\bin\Debug\ChatServer.pdb
+D:\19ct1\c#\New folder\winform-chat-app-h\ChatServer\obj\Debug\ChatServer.csproj.AssemblyReference.cache
+D:\19ct1\c#\New folder\winform-chat-app-h\ChatServer\obj\Debug\ChatServer.frmServer.resources
+D:\19ct1\c#\New folder\winform-chat-app-h\ChatServer\obj\Debug\ChatServer.Properties.Resources.resources
+D:\19ct1\c#\New folder\winform-chat-app-h\ChatServer\obj\Debug\ChatServer.csproj.GenerateResource.cache
+D:\19ct1\c#\New folder\winform-chat-app-h\ChatServer\obj\Debug\ChatServer.csproj.CoreCompileInputs.cache
+D:\19ct1\c#\New folder\winform-chat-app-h\ChatServer\obj\Debug\ChatServer.exe
+D:\19ct1\c#\New folder\winform-chat-app-h\ChatServer\obj\Debug\ChatServer.pdb
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\ChatServer\bin\Debug\ChatServer.exe.config
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\ChatServer\bin\Debug\ChatServer.exe
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\ChatServer\bin\Debug\ChatServer.pdb
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\ChatServer\obj\Debug\ChatServer.csproj.AssemblyReference.cache
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\ChatServer\obj\Debug\ChatServer.frmServer.resources
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\ChatServer\obj\Debug\ChatServer.Properties.Resources.resources
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\ChatServer\obj\Debug\ChatServer.csproj.GenerateResource.cache
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\ChatServer\obj\Debug\ChatServer.csproj.CoreCompileInputs.cache
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\ChatServer\obj\Debug\ChatServer.exe
+D:\19ct1\c#\New folder\HuaGiaHuy_ChatApp\ChatServer\obj\Debug\ChatServer.pdb

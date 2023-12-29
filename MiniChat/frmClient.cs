@@ -25,6 +25,7 @@ namespace MiniChat
         bool isSendIcon;
         List<string> clientActive = new List<string>();
         int id = -1;
+
         public frmClient()
         {
             InitializeComponent();
@@ -33,9 +34,9 @@ namespace MiniChat
             addEmoji();
             listIcons.Visible = false;
             listClientOnline.Items.Add("127.0.0.1:9999");
-            
-                
         }
+
+        // Kết nối socket
         private void Connect()
         {
             client = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
@@ -60,6 +61,7 @@ namespace MiniChat
             client.Close();
         }
 
+        // Nhận tin nhắn khi có người gửi
         private void ReceiveMessage()
         {
             try
@@ -94,11 +96,12 @@ namespace MiniChat
                         pictureBox2.Visible = false;
                         Clipboard.SetImage(pictureBox2.Image);
                         lvMessage.SelectionAlignment = HorizontalAlignment.Left;
-                        lvMessage.AppendText("server" + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
                         lvMessage.ReadOnly = false;
                         lvMessage.Select(lvMessage.Text.ToString().Length, 0);
                         lvMessage.Paste();
                         lvMessage.AppendText("\n");
+
+                        lvMessage.AppendText("server" + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
                         lvMessage.ReadOnly = true;
                     }
                 }
@@ -108,15 +111,17 @@ namespace MiniChat
                 CloseClient();
             }
         }
+
+        // Thêm tin nhắn vào BOX
         private void AddMessage(string s)
         {
             lvMessage.SelectionAlignment = HorizontalAlignment.Left;
-            lvMessage.AppendText("Client another" + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
             lvMessage.ReadOnly = false;
             lvMessage.Select(lvMessage.Text.ToString().Length, 0);
             lvMessage.AppendText(s);
             lvMessage.AppendText("\n");
             lvMessage.ReadOnly = true;
+            lvMessage.AppendText("Người khác:" + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
         }
 
         private void SendMessage(string s, string portTarget)
@@ -126,6 +131,7 @@ namespace MiniChat
             isReceived = false;
         }
 
+        // encode
         private byte[] Serialize(object obj)
         {
             MemoryStream stream = new MemoryStream();
@@ -133,6 +139,15 @@ namespace MiniChat
             formatter.Serialize(stream, obj);
             return stream.ToArray();
         }
+
+        // decode
+        private object Deserialize(byte[] data)
+        {
+            MemoryStream stream = new MemoryStream(data);
+            BinaryFormatter formatter = new BinaryFormatter();
+            return formatter.Deserialize(stream);
+        }
+
         private bool check(byte[] data)
         {
             try
@@ -152,6 +167,8 @@ namespace MiniChat
                 return false;
             }
         }
+
+        // Gửi ảnh
         private void SendImage()
         {
                 MemoryStream ms;
@@ -164,12 +181,7 @@ namespace MiniChat
                 isSendImage = false;
                 pictureBox3.Image = null;
         }
-        private object Deserialize(byte[] data)
-        {
-            MemoryStream stream = new MemoryStream(data);
-            BinaryFormatter formatter = new BinaryFormatter();
-            return formatter.Deserialize(stream);
-        }
+
         public byte[] ImageToByteArray(Image imageIn)
         {
             using (var ms = new MemoryStream())
@@ -178,6 +190,7 @@ namespace MiniChat
                 return ms.ToArray();
             }
         }
+
         private void btnSend_Click(object sender, EventArgs e)
         {
             if (listClientOnline.CheckedItems.Count == 0)
@@ -192,11 +205,11 @@ namespace MiniChat
                     {
                         SendImage();
                         lvMessage.SelectionAlignment = HorizontalAlignment.Right;
-                        lvMessage.AppendText("Me" + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
                         lvMessage.ReadOnly = false;
                         lvMessage.Select(lvMessage.Text.ToString().Length, 0);
                         lvMessage.Paste();
                         lvMessage.AppendText("\n");
+                        lvMessage.AppendText("Tôi: " + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
                         lvMessage.ReadOnly = true;
 
                     }
@@ -207,40 +220,44 @@ namespace MiniChat
                         data = ImageToByteArray(image);
                         client.Send(data);
                         lvMessage.SelectionAlignment = HorizontalAlignment.Right;
-                        lvMessage.AppendText("Me" + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
                         lvMessage.ReadOnly = false;
                         lvMessage.Select(lvMessage.Text.ToString().Length, 0);
                         lvMessage.Paste();
                         listIcons.Visible = false;
                         lvMessage.ReadOnly = true;
                         lvMessage.AppendText("\n");
+                        lvMessage.AppendText("Tôi: " + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
                         txtMessage.Text = "";
                         isSendIcon = false;
                     }
                     else
                     {
-                        string client = listClientOnline.CheckedItems[i].ToString();
-                        if (client.Contains("127.0.0.1:9999"))
+                        if (txtMessage.Text != String.Empty)
                         {
-                            SendMessage(txtMessage.Text, "9999");
+                            string client = listClientOnline.CheckedItems[i].ToString();
+                            if (client.Contains("127.0.0.1:9999"))
+                            {
+                                SendMessage(txtMessage.Text, "9999");
+                            }
+                            else
+                            {
+                                string[] tokens = client.Split(new[] { ":" }, StringSplitOptions.None);
+                                SendMessage(txtMessage.Text, tokens[1]);
+                            }
+                            lvMessage.AppendText("\n");
+                            lvMessage.SelectionAlignment = HorizontalAlignment.Right;
+                            lvMessage.AppendText(txtMessage.Text);
+                            lvMessage.AppendText("\n");
+                            txtMessage.Clear();
+                            lvMessage.AppendText("Tôi: " + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
+                            lvMessage.AppendText("\n");
+
+                            txtMessage.Focus();
                         }
-                        else
-                        {
-                            string[] tokens = client.Split(new[] { ":" }, StringSplitOptions.None);
-                            SendMessage(txtMessage.Text, tokens[1]);
-                        }
-                        lvMessage.AppendText("\n");
-                        lvMessage.SelectionAlignment = HorizontalAlignment.Right;
-                        lvMessage.AppendText("Tôi" + "\t" + DateTime.Now.ToString("hh:mm:ss dd/MM/yyyy") + "\n");
-                        lvMessage.AppendText(txtMessage.Text);
-                        lvMessage.AppendText("\n");
-                        txtMessage.Clear();
-                        txtMessage.Focus();
                     }
                 }
 
         }
-
 
         private void btnSendImage_Click(object sender, EventArgs e)
         {
@@ -267,10 +284,9 @@ namespace MiniChat
                 txtMessage.Paste();
                 listIcons.Visible = false;
                 isSendIcon = true;
-
         }
 
-
+        // Lấy icon từ folder Emoij đổ ra
         private void addEmoji()
         {
             string path = getPathName() + @"\Emoij";
@@ -292,6 +308,8 @@ namespace MiniChat
             }
 
         }
+
+        // Lấy dường dẫn
         public string getPathName()
         {
             string getPath = Environment.CurrentDirectory.ToString();
@@ -300,6 +318,7 @@ namespace MiniChat
             return url.ToString();
 
         }
+
         private void removeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int firstcharindex = lvMessage.GetFirstCharIndexOfCurrentLine();
@@ -322,6 +341,19 @@ namespace MiniChat
         private void frmClient_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn xoá tất cả tin nhắn?",
+                                                  "Xác nhận xoá",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                lvMessage.Clear();
+            }
         }
     }
 }
